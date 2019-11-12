@@ -7,6 +7,7 @@ public class UserForm {
     private String email;
     private String nickName;
     private String password;
+    private Boolean admin;
 
     public String getName() {
         return name;
@@ -38,6 +39,14 @@ public class UserForm {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Boolean getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(Boolean admin) {
+        this.admin = admin;
     }
 
     public User convert() {

@@ -2,7 +2,6 @@ package com.example.gaiaapi.Dto;
 
 import com.example.gaiaapi.Models.User;
 
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -11,12 +10,22 @@ public class UserDto {
     private String name;
     private String nickName;
     private String email;
+    private Boolean admin;
+
+    public Boolean getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(Boolean admin) {
+        this.admin = admin;
+    }
 
     public UserDto(User user) {
         this.id = user.getId();
         this.name = user.getName();
         this.nickName = user.getNickName();
         this.email = user.getEmail();
+        this.admin = user.getAdmin();
     }
 
     public static List<UserDto> convert(List<User> users) {

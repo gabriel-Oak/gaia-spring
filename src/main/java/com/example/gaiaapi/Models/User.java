@@ -1,6 +1,7 @@
 package com.example.gaiaapi.Models;
 
 import com.example.gaiaapi.Controllers.Forms.UserForm;
+import com.example.gaiaapi.Dto.UserDto;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,6 +19,16 @@ public class User {
     private String nickName;
     private String password;
 
+    public Boolean getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(Boolean admin) {
+        this.admin = admin;
+    }
+
+    private Boolean admin;
+
     public User() {
     }
 
@@ -26,6 +37,7 @@ public class User {
         this.email = form.getEmail();
         this.nickName = form.getNickName();
         this.password = form.getPassword();
+        this.admin = form.getAdmin();
     }
 
     public Long getId() {
@@ -67,4 +79,5 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+    
 }
