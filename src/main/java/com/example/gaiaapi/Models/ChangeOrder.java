@@ -18,7 +18,7 @@ public class ChangeOrder {
 
     private String pratoPrincipal;
 
-    private LocalDateTime createdAt = LocalDateTime.now();
+    private LocalDateTime createdAt;
     private LocalDateTime updatedAt = LocalDateTime.now();
 
     public ChangeOrder() {
@@ -29,6 +29,7 @@ public class ChangeOrder {
         this.user = user;
         this.menu = menu;
         this.pratoPrincipal = form.getPratoPrincipal();
+        this.createdAt = form.getCreatedAt();
     }
 
     public Long getId() {

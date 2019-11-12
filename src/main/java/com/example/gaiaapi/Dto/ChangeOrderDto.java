@@ -4,6 +4,7 @@ import com.example.gaiaapi.Models.ChangeOrder;
 import com.example.gaiaapi.Models.Menu;
 import com.example.gaiaapi.Models.User;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -12,12 +13,16 @@ public class ChangeOrderDto {
     private Long user;
     private Long menu;
     private String pratoPrincipal;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
 
     public ChangeOrderDto(ChangeOrder order) {
         this.id = order.getId();
         this.pratoPrincipal = order.getPratoPrincipal();
         this.user = order.getUser().getId();
         this.menu = order.getMenu().getId();
+        this.createdAt = order.getCreatedAt();
+        this.updatedAt = order.getUpdatedAt();
     }
 
     public String getPratoPrincipal() {

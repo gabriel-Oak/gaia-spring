@@ -4,14 +4,34 @@ import com.example.gaiaapi.Models.ChangeOrder;
 import com.example.gaiaapi.Models.Menu;
 import com.example.gaiaapi.Models.User;
 
+import java.time.LocalDateTime;
+
 public class ChangeOrderForm {
     private Long id;
     private Long user_id;
     private Long menu_id;
     private String pratoPrincipal;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
 
     public String getPratoPrincipal() {
         return pratoPrincipal;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
     public void setPratoPrincipal(String pratoPrincipal) {

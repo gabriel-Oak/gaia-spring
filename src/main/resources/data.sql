@@ -13,3 +13,7 @@ INSERT INTO CHANGE_ORDER(user_id, menu_id, created_at, updated_at, prato_princip
 INSERT INTO CHANGE_ORDER(user_id, menu_id, created_at, updated_at, prato_principal) values ( 2, 3, '2019-11-11', '2019-11-11', 'teste 4');
 INSERT INTO CHANGE_ORDER(user_id, menu_id, created_at, updated_at, prato_principal) values ( 2, 4, '2019-11-11', '2019-11-11', 'teste 5');
 INSERT INTO CHANGE_ORDER(user_id, menu_id, created_at, updated_at, prato_principal) values ( 2, 5, '2019-11-11', '2019-11-11', 'teste 6');
+
+INSERT INTO FEEDBACK(feedback, created_at) values ( 'Muito bom', '2019-11-11' );
+INSERT INTO FEEDBACK(feedback, created_at) values ( 'Muito bom', '2019-11-11' );
+INSERT INTO FEEDBACK(feedback, created_at) values ( 'Muito bom', '2019-11-11' );
