@@ -2,6 +2,7 @@ package com.example.gaiaapi.Models;
 
 import com.example.gaiaapi.Controllers.Forms.UserForm;
 import com.example.gaiaapi.Dto.UserDto;
+import org.hibernate.validator.constraints.UniqueElements;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,6 +16,8 @@ public class User {
     private Long id;
 
     private String name;
+
+
     private String email;
     private String nickName;
     private String password;

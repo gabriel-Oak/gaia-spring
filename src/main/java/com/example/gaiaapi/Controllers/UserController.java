@@ -23,7 +23,7 @@ public class UserController {
         return UserDto.convert(users);
     }
 
-    @PostMapping
+    @PutMapping
     public User create(@RequestBody UserForm form) {
         User user = form.convert();
         return userRepository.save(user);
