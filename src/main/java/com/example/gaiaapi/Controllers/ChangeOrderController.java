@@ -4,13 +4,16 @@ import com.example.gaiaapi.Controllers.Forms.ChangeOrderForm;
 import com.example.gaiaapi.Dto.ChangeOrderDto;
 import com.example.gaiaapi.Models.ChangeOrder;
 import com.example.gaiaapi.Models.Menu;
+import com.example.gaiaapi.Models.Notification;
 import com.example.gaiaapi.Models.User;
 import com.example.gaiaapi.Repositories.ChangeOrderRepository;
 import com.example.gaiaapi.Repositories.MenuRepository;
+import com.example.gaiaapi.Repositories.NotificationRepository;
 import com.example.gaiaapi.Repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,6 +30,9 @@ public class ChangeOrderController {
     @Autowired
     MenuRepository menuRepository;
 
+    @Autowired
+    NotificationRepository notificationRepository;
+
     @GetMapping
     public List<ChangeOrderDto> listAll() {
         List<ChangeOrder> orders =  changeOrderRepository.findAll();
@@ -42,7 +48,8 @@ public class ChangeOrderController {
         Menu menu = m.get();
 
         changeOrderRepository.save(new ChangeOrder(form, user, menu));
-        return "Troca realizada com sucesso";
+        notificationRepository.save(new Notification(user, "Troca realizada em" + form.getUpdatedAt()));
+        return "Troca realizada em " + LocalDateTime.now();
     }
 
     @PutMapping
