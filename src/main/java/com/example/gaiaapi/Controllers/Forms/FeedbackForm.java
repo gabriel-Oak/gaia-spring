@@ -2,8 +2,14 @@ package com.example.gaiaapi.Controllers.Forms;
 
 import com.example.gaiaapi.Models.Feedback;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
 public class FeedbackForm {
+    @NotNull @NotEmpty
     private String message;
+
+    @NotNull
     private Long user_id;
 
     public String getMessage() {

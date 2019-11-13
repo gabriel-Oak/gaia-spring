@@ -11,6 +11,7 @@ import com.example.gaiaapi.Repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -33,7 +34,7 @@ public class MenuController {
     }
 
     @PutMapping
-    public Menu create(@RequestBody MenuForm form) {
+    public Menu create(@RequestBody @Valid MenuForm form) {
         List<User> users = userRepository.findAll();
         users.forEach(user -> notificationRepository.save(new Notification(
                 user,

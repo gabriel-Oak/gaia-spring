@@ -7,6 +7,7 @@ import com.example.gaiaapi.Repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.Arrays;
 import java.util.List;
 
@@ -24,7 +25,7 @@ public class UserController {
     }
 
     @PutMapping
-    public User create(@RequestBody UserForm form) {
+    public User create(@RequestBody @Valid UserForm form) {
         User user = form.convert();
         return userRepository.save(user);
     }

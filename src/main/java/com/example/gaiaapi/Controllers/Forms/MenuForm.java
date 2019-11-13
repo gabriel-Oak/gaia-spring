@@ -2,17 +2,29 @@ package com.example.gaiaapi.Controllers.Forms;
 
 import com.example.gaiaapi.Models.Menu;
 
+import javax.validation.constraints.Future;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 public class MenuForm {
+    @NotNull
     private Long id;
+    @NotNull @NotEmpty
     private String pratoPrincipal;
+    @NotNull @NotEmpty
     private String opcao1;
+    @NotNull @NotEmpty
     private String opcao2;
+    @NotNull @NotEmpty
     private String guarnicao1;
+    @NotNull @NotEmpty
     private String guarnicao2;
+    @NotNull @NotEmpty
     private String salada;
+    @NotNull @NotEmpty
     private String sobremesa;
+    @NotNull @Future
     private Date date;
 
     public Long getId() {

@@ -1,7 +1,14 @@
 package com.example.gaiaapi.Controllers.Forms;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
 public class SessionForm {
+
+    @NotNull @Email
     private String email;
+    @NotNull @NotEmpty
     private String password;
 
     public String getEmail() {
