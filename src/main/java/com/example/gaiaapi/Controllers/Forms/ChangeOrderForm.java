@@ -11,14 +11,14 @@ import java.time.LocalDateTime;
 public class ChangeOrderForm {
     private Long id;
 
-    @NotNull 
+    @NotNull
     private Long user_id;
     @NotNull
     private Long menu_id;
     @NotNull @NotEmpty
     private String pratoPrincipal;
     private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
+    private LocalDateTime updatedAt = LocalDateTime.now();
 
     public String getPratoPrincipal() {
         return pratoPrincipal;

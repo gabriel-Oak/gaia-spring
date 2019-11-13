@@ -53,7 +53,7 @@ public class ChangeOrderController {
         Menu menu = m.get();
 
         ChangeOrder order = changeOrderRepository.save(new ChangeOrder(form, user, menu));
-        notificationRepository.save(new Notification(user, "Troca realizada em" + form.getUpdatedAt()));
+        notificationRepository.save(new Notification(user, "Troca realizada em " + form.getUpdatedAt()));
 
         URI uri = uriBuilder.path("/order/{id}").buildAndExpand(order.getId()).toUri();
         return ResponseEntity.created(uri).body(new ChangeOrderDto(order));

@@ -4,10 +4,7 @@ import com.example.gaiaapi.Controllers.Forms.UserForm;
 import com.example.gaiaapi.Dto.UserDto;
 import org.hibernate.validator.constraints.UniqueElements;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class User {
@@ -16,7 +13,6 @@ public class User {
     private Long id;
 
     private String name;
-
 
     private String email;
     private String nickName;
