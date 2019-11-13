@@ -4,12 +4,18 @@ import com.example.gaiaapi.Models.ChangeOrder;
 import com.example.gaiaapi.Models.Menu;
 import com.example.gaiaapi.Models.User;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 public class ChangeOrderForm {
     private Long id;
+
+    @NotNull 
     private Long user_id;
+    @NotNull
     private Long menu_id;
+    @NotNull @NotEmpty
     private String pratoPrincipal;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
